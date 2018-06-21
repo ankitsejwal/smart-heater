@@ -1,3 +1,5 @@
+#!bin/python3
+
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 import RPi.GPIO as GPIO
@@ -14,11 +16,11 @@ def home():
     
     if message_body.lower() == 'on':
         pi_thing.set_led(True)
-        resp.message_body('LED turned ON')
+        resp.message('LED turned ON')
 
     elif message_body.lower() == 'off' :
         pi_thing.set_led(False)
-        resp.message_body('LED turned OFF')
+        resp.message('LED turned OFF')
     
     return str(resp)
     
