@@ -30,6 +30,11 @@ def home():
         heater.set_led(False)
         resp.message('LED turned OFF')
     
+    # get led status
+    elif message_body.lower() == 'status':
+        status = 'ON' if heater.get_status() == 1 else 'OFF'
+        resp.message('The LED is currently ' + status)
+
     return str(resp)
     
 if __name__ == '__main__':
