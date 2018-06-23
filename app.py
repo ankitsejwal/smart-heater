@@ -6,6 +6,8 @@ import RPi.GPIO as GPIO
 from thing import PiThing
 
 pi_thing = PiThing()
+on_phrase = ['on', 'heater on', 'turn heater on', 'turn on']
+off_phrase = ['off', 'heater off', 'turn heater off', 'turn off']
 
 app = Flask(__name__)
 
@@ -14,11 +16,11 @@ def home():
     message_body = request.form['Body']
     resp = MessagingResponse()
     
-    if message_body.lower() == 'on':
+    if message_body.lower() in on_phrase:
         pi_thing.set_led(True)
         resp.message('LED turned ON')
 
-    elif message_body.lower() == 'off' :
+    elif message_body.lower() in off_phrase :
         pi_thing.set_led(False)
         resp.message('LED turned OFF')
     
