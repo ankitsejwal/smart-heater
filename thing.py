@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 
 LED_PIN = 23
 
-class PiThing(object):
+class Heater(object):
     
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
