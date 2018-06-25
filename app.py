@@ -1,6 +1,6 @@
 #!bin/python3
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 from twilio.twiml.messaging_response import MessagingResponse
 import RPi.GPIO as GPIO
 from heater import Heater
@@ -13,9 +13,13 @@ off_phrase = ['off', 'heater off', 'turn heater off', 'turn off']
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def home():
+    led_status = heater.get_status()
+    return render_template('home.html', led_status = led_status)
 
+@app.route('/sms', methods=['GET', 'POST'])
+def sms():
     # Get message from twilio
     message_body = request.form['Body']
     resp = MessagingResponse()

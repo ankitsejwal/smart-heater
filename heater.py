@@ -6,6 +6,7 @@ class Heater(object):
     
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
+        GPIO.setwarnings(False)
         GPIO.setup(LED_PIN, GPIO.OUT)
 
     def set_led(self, value):
