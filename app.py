@@ -18,6 +18,18 @@ def home():
     led_status = heater.get_status()
     return render_template('home.html', led_status = led_status)
 
+@app.route('/led/<int:led_state>', methods=['POST'])
+def led(led_state):
+    if led_state == 1:
+        heater.set_led(True)
+    elif led_state == 0:
+        heater.set_led(False)
+    else:
+        return ('Bad request', 400)
+
+    return ('', 204)
+
+
 @app.route('/sms', methods=['GET', 'POST'])
 def sms():
     # Get message from twilio

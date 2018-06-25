@@ -11,5 +11,23 @@
 <body>
     <h1>Smart heater</h1>
     <p>LED status: {{ 'On' if led_status else 'Off' }}</p>
+    <p>
+        <button id="led_on" type="button">ON</button>
+        <button id="led_off" type="button">OFF</button>
+    </p>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+      $('#led_on').click(function(){
+          console.log('ON')
+          $.post('/led/1')
+      })  
+      $('#led_off').click(function(){
+          console.log('OFF')
+          $.post('/led/0')
+      })  
+    })
+</script>
 </html>
