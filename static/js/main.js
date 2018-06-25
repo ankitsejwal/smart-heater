@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $('#led_on').click(function(){
+        console.log('ON')
+        $.post('/led/1')
+    })  
+    $('#led_off').click(function(){
+        console.log('OFF')
+        $.post('/led/0')
+    })  
+  })
