@@ -1,5 +1,5 @@
-# smart-heater
-Controlling an old centralised heater through sms or web app | raspberry-pi project 
+# smart heater [raspberry pi + servo motor + code]
+Controlling an old centralised heater through sms or web app.
 
 ## Features:
 * Get status or turn On/Off heater from any where through SMS
@@ -7,8 +7,8 @@ Controlling an old centralised heater through sms or web app | raspberry-pi proj
 * Set timer to turn On the heater
 
 ---
-## Commands
-### SMS
+## Commands:
+### SMS:
 * Turn heater on: on, turn on, turn heater on
 * Turn heater off: off, turn off, turn heater off
 * Get status: status, ?
