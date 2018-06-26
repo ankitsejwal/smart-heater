@@ -8,20 +8,11 @@ Controlling an old centralised heater through sms or web app | raspberry-pi proj
 
 ---
 ## Commands
-## SMS
-### Turn on:
-* on
-* turn on
-* turn heater on
+### SMS
+* Turn heater on: on, turn on, turn heater on
+* Turn heater off: off, turn off, turn heater off
+* Get status: status, ?
 
-### Turn off
-* off
-* turn off
-* turn heater off
-
-### Get status
-* status
-
-## Web page:
+### Web page:
 * See web page to look at the status if heater is on or off
 * Turn on/off heater by pressing a button on webpage
