@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 
+# pin configurations
 LED_PIN = 23
 
 class Heater(object):

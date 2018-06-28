@@ -5,6 +5,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 import RPi.GPIO as GPIO
 from heater import Heater
 
+# create heater object
 heater = Heater()
 
 # ON and OFF phrase that we want to match with recieved SMS
@@ -26,7 +27,7 @@ def led(led_state):
         heater.set_led(False)
     else:
         return ('Bad request', 400)
-
+    # return success 204 
     return ('', 204)
 
 
